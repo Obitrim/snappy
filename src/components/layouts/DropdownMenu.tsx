@@ -36,9 +36,8 @@ const DropdownMenu = ({
           "-translate-x-1/2",
           " transition-all duration-200 ease-in-out",
           "group-hover:top-[length:calc(100%)] group-hover:opacity-100",
-          "group-hover:pointer-events-auto"
-        )}
-      >
+          "min-w-[170px] py-2 group-hover:pointer-events-auto"
+        )}>
         {menuItems.map((val, idx) => (
           <RouteLink
             href={val.url}

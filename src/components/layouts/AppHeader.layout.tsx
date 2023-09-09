@@ -17,13 +17,12 @@ const AppHeader = () => {
       className={clsx(
         "h-[length:var(--header-h)] bg-black text-white",
         "fixed top-0 left-0 z-50 w-screen"
-      )}
-    >
+      )}>
       <AppContainer className=" h-full ">
         <nav className={clsx("flex h-full items-center gap-5")}>
           <Link href="/">
             <a href="#" className={clsx("text-2xl font-bold")}>
-              snappy
+              Snappy
             </a>
           </Link>
           <div
@@ -31,9 +30,11 @@ const AppHeader = () => {
               "flex flex-1 flex-col  sm:flex-row sm:justify-between",
               "fixed right-0 top-0 h-screen w-[300px] bg-white ",
               "sm:static sm:h-auto sm:w-auto sm:bg-transparent"
-            )}
-          >
-            <div className={"flex flex-col gap-4 sm:flex-1 sm:flex-row"}>
+            )}>
+            <div
+              className={
+                "flex flex-col gap-4 sm:flex-1 sm:flex-row sm:items-center"
+              }>
               <DropdownMenu
                 className="ml-8"
                 triggerLabel="Features"
