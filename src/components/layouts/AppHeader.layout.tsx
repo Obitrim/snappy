@@ -19,63 +19,73 @@ const AppHeader = () => {
         "fixed top-0 left-0 z-50 w-screen"
       )}
     >
-      <AppContainer className="flex h-full items-center justify-between">
-        <nav className={clsx("flex items-center gap-5")}>
+      <AppContainer className=" h-full ">
+        <nav className={clsx("flex h-full items-center gap-5")}>
           <Link href="/">
             <a href="#" className={clsx("text-2xl font-bold")}>
               snappy
             </a>
           </Link>
-          <DropdownMenu
-            className="ml-8"
-            triggerLabel="Features"
-            menuItems={FEATURES_DROPDOWN_NAV_ITEMS}
-            triggerClass={clsx(
-              "text-gray-300 transition-all duration-150 hover:text-white"
-            )}
-          />
-          {/* todo list, reminders, calendars, planning */}
-          <DropdownMenu
-            triggerLabel="Company"
-            menuItems={COMPANY_DROPDOWN_NAV_ITEMS}
-            triggerClass={clsx(
-              "text-gray-300 transition-all duration-150 hover:text-white"
-            )}
-          />
-          <RouteLink
-            href="/careers"
+          <div
             className={clsx(
-              "text-gray-300 transition-all duration-150 hover:text-white"
+              "flex flex-1 flex-col  sm:flex-row sm:justify-between",
+              "fixed right-0 top-0 h-screen w-[300px] bg-white ",
+              "sm:static sm:h-auto sm:w-auto sm:bg-transparent"
             )}
-            text="Careers"
-          />
-          <RouteLink
-            href="/about"
-            className={clsx(
-              "text-gray-300 transition-all duration-150 hover:text-white"
-            )}
-            text="About"
-          />
+          >
+            <div className={"flex flex-col gap-4 sm:flex-1 sm:flex-row"}>
+              <DropdownMenu
+                className="ml-8"
+                triggerLabel="Features"
+                menuItems={FEATURES_DROPDOWN_NAV_ITEMS}
+                triggerClass={clsx(
+                  "text-gray-300 transition-all duration-150 hover:text-white"
+                )}
+              />
+              {/* todo list, reminders, calendars, planning */}
+              <DropdownMenu
+                triggerLabel="Company"
+                menuItems={COMPANY_DROPDOWN_NAV_ITEMS}
+                triggerClass={clsx(
+                  "text-gray-300 transition-all duration-150 hover:text-white"
+                )}
+              />
+              <RouteLink
+                href="/careers"
+                className={clsx(
+                  "text-gray-300 transition-all duration-150 hover:text-white"
+                )}
+                text="Careers"
+              />
+              <RouteLink
+                href="/about"
+                className={clsx(
+                  "text-gray-300 transition-all duration-150 hover:text-white"
+                )}
+                text="About"
+              />
+            </div>
+            <div className="flex flex-col sm:flex-row">
+              <RouteLink
+                href="/login"
+                className={clsx(
+                  "text-gray-300 transition-all duration-150 hover:text-white",
+                  "py-1 px-3"
+                )}
+                text="Login"
+              />
+              <RouteLink
+                href="/register"
+                className={clsx(
+                  "text-gray-400 transition-all duration-150 ",
+                  "bg-white hover:text-black",
+                  "py-1 px-3"
+                )}
+                text="Register"
+              />
+            </div>
+          </div>
         </nav>
-        <div className={clsx("flex items-center gap-2")}>
-          <RouteLink
-            href="/login"
-            className={clsx(
-              "text-gray-300 transition-all duration-150 hover:text-white",
-              "py-1 px-3"
-            )}
-            text="Login"
-          />
-          <RouteLink
-            href="/register"
-            className={clsx(
-              "text-gray-400 transition-all duration-150 ",
-              "bg-white hover:text-black",
-              "py-1 px-3"
-            )}
-            text="Register"
-          />
-        </div>
       </AppContainer>
     </header>
   );
